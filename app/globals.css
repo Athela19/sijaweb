@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #1034A6;
+  --teks: #171717;
+  --teks-secondary: gray;
 }
 
 @theme inline {
@@ -16,6 +19,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --teks: #ffffff;
+    --teks-secondary: gray;
   }
 }
 
