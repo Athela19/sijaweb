@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import AppShell from "@/component/layout/appshel";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,11 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Create Next App",
+  title: "Sistem Informasi Jaringan dan Aplikasi",
   description: "Sistem Informasi Jaringan",
-  icon:{
-    url:"/logo sija.png"
-  }
 };
 
 export default function RootLayout({ children }) {
@@ -26,7 +23,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AppShell>{children}</AppShell>
+        {children}
       </body>
     </html>
   );

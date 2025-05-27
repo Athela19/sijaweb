@@ -4,6 +4,7 @@ import { FaInstagram, FaEnvelope, FaYoutube, FaMap } from "react-icons/fa";
 import { handleEmail } from "../sub-component/email";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function Footer() {
   const ref = useRef(null);
@@ -20,9 +21,7 @@ export default function Footer() {
       >
         {/* Logo (Desktop Only) */}
         <div className="hidden md:flex justify-center md:justify-start items-center border-b md:border-b-0 md:border-r border-solid border-[var(--teks-secondary)] px-0 md:px-16 pb-6 md:pb-0 flex flex-col">
-          <h1 className="text-3xl font-bold text-[var(--teks)] text-center md:text-left">
-            SIJA
-          </h1>
+          <Image src="/logo sija.png" alt="Logo" width={80} height={80} />
           <h1 className="text-base font-bold text-[var(--teks)] text-center">
             Sistem Informasi Jaringan dan Aplikasi
           </h1>
@@ -33,7 +32,7 @@ export default function Footer() {
           {/* Social Media */}
           <div className="flex flex-col gap-3 items-center order-2 md:order-2">
             <p className="font-bold text-2xl text-center">
-              Stay <span className="text-[var(--primary)]">Connected</span>
+              Stay <span className="text-[var(--primary)]">Connected</span>!!
             </p>
             <ul className="flex gap-6 text-2xl justify-center">
               <li>
