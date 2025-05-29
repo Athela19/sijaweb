@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import TypingEffect from "../sub-component/typing";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(MorphSVGPlugin);
@@ -60,9 +61,9 @@ export default function HomePage() {
       next();
     }
 
-    morphLoop(wave1Ref, wave1Paths, 4);
+    morphLoop(wave1Ref, wave1Paths, 2);
     morphLoop(wave2Ref, wave2Paths, 3);
-    morphLoop(wave3Ref, wave3Paths, 2);
+    morphLoop(wave3Ref, wave3Paths, 1);
   }, []);
 
   return (
@@ -79,7 +80,7 @@ export default function HomePage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 opacity-90 bg-[var(--primary)]"></div>
+        <div className="absolute inset-0 opacity-80 bg-[var(--primary)]"></div>
       </div>
 
       {/* Konten utama */}
@@ -89,15 +90,15 @@ export default function HomePage() {
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="flex flex-col gap-4 mt-12 md:mt-0 mb-42 md:mb-24 text-center md:text-left"
+          className="flex flex-col gap-4 mt-12 md:mt-0 mb-62 md:mb-24 text-center md:text-left"
         >
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Smart Product Innovation
           </h1>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-white">
-            Sija Smart
+          <h2 className="sm:text-3xl lg:text-2xl font-medium text-gray-300">
+            <TypingEffect text="SMK Negeri 1 Cimahi" speed={100} />
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <div className="flex flex-row gap-4 justify-center md:justify-start">
             <Link href={"#product"}>
               <button className="px-6 py-3 bg-[var(--secondary)] text-white rounded-full hover:bg-[var(--primary)] border-2 border-[var(--secondary)] transition font-semibold">
                 Lihat Produk
@@ -129,11 +130,11 @@ export default function HomePage() {
       </div>
 
       {/* Gelombang animasi bawah */}
-      <div className="absolute bottom-0 left-0 right-0 z-30 overflow-hidden">
+      <div className="absolute bottom-0 left-[-50%] w-[200%] z-30 overflow-hidden">
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
-          className="relative block w-[200%] h-[200px]"
+          className="relative block w-full h-[200px]"
         >
           <path
             ref={wave1Ref}
@@ -144,7 +145,7 @@ export default function HomePage() {
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
-          className="relative block w-[200%] h-[200px] -mt-[230px]"
+          className="relative block w-full h-[200px] -mt-[230px]"
         >
           <path
             ref={wave2Ref}
@@ -156,7 +157,7 @@ export default function HomePage() {
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
-          className="relative block w-[200%] h-[200px] -mt-[180px]"
+          className="relative block w-full h-[200px] -mt-[180px]"
         >
           <path
             ref={wave3Ref}

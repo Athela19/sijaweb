@@ -31,7 +31,7 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-16 py-2 ${
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-16 py-3 ${
         scrolled ? 'bg-[var(--primary)]' : "bg-transparent"
       } transition-colors duration-500`}
     >
@@ -83,14 +83,14 @@ export default function Navbar() {
 
             {/* Sidebar */}
             <motion.aside
-              initial={{ x: "-100%" }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
+              exit={{ x: "100%" }}
               transition={{ duration: 0.3 }}
-              className="fixed top-0 left-0 bottom-0 w-64 bg-[var(--primary)] z-50 p-6 flex flex-col gap-6"
+              className="fixed top-0 right-0 bottom-0 w-64 bg-[var(--primary)] z-50 p-6 flex flex-col gap-6"
             >
               <div className="flex justify-between items-center">
-                <h2 className="text-white text-xl font-bold">Menu</h2>
+                <h2 className="text-white text-2xl font-bold">Menu</h2>
                 <button onClick={() => setMenuOpen(false)} className="text-white">
                   <X size={28} />
                 </button>
@@ -102,7 +102,7 @@ export default function Navbar() {
                     key={item.label}
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className="text-white text-base font-medium"
+                    className="text-white text-lg font-medium text-center"
                   >
                     {item.label}
                   </a>

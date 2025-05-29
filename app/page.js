@@ -4,6 +4,8 @@ import HomePage from "@/component/landingPage/home";
 import { useEffect, useState } from "react";
 import Loading from "@/component/sub-component/loading";
 import AppShell from "@/component/layout/appshel";
+import AboutPage from "@/component/landingPage/about";
+import StatsPage from "@/component/landingPage/stats";
  
 export default function Home() {
    const [loading, setLoading] = useState(true);
@@ -21,6 +23,8 @@ export default function Home() {
     <>
       <AppShell>
         <HomePage />
+        <AboutPage />
+        <StatsPage />
       </AppShell>
     </>
   );
