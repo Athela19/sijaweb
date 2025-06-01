@@ -56,7 +56,7 @@ export default function AboutSection() {
             Produk
             <span className="w-24 border-b-2 border-[var(--secondary)]" />
           </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary)] mt-2 text-center md:text-left">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary)] mt-2 text-left">
             Bukan Sekadar Inovasi
           </h2>
         </div>
