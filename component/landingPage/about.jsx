@@ -48,13 +48,16 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="md:w-5/12 w-full px-4"
           >
-            <h1 className="md:text-4xl text-3xl font-bold text-[var(--primary)] mb-2 pb-2 border-b-2 border-[var(--primary)] text-center md:text-left">
+            <h1 className="md:text-lg text-base font-bold text-gray-600 mb-2 md:mb-0 text-center md:text-left flex items-center gap-4">
               Tentang Kami
+             <span className=" w-24 border-b-2 border-[var(--secondary)]"></span>
+
             </h1>
-            <h2 className="text-2xl font-semibold text-[var(--secondary)] mb-4 text-left hidden md:block">
+            <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary)] mb-4 text-left block">
               Sistem Informasi Jaringan dan Aplikasi
             </h2>
-            <p className="text-[var(--teks)] leading-relaxed md:text-left text-center">
+
+            <p className="text-[var(--teks)] leading-relaxed text-left">
               Jurusan Sistem Informasi Jaringan dan Aplikasi (SIJA) Jurusan
               Sistem Informatika, Jaringan, dan Aplikasi adalah salah satu
               program pendidikan menengah kejuruan di tingkat sekolah menengah
@@ -78,7 +81,7 @@ export default function AboutSection() {
                 <motion.a
                   key={feature.id}
                   href={`#${feature.id}`}
-                  initial={{ opacity: 0, y: 100 }}
+                  initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: feature.delay }}
                   viewport={{ once: true }}
