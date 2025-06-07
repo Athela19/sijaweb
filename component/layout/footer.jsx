@@ -80,15 +80,16 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className="flex flex-col gap-4 items-center text-center order-1 md:order-1">
-            <ul className="flex items-center gap-6">
+            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3 max-w-md">
               {[
                 { label: "Home", href: "#home" },
                 { label: "About", href: "#about" },
+                { label: "Product", href: "#product" },
                 { label: "Docs", href: "#docs" },
                 { label: "Structure", href: "#structure" },
                 { label: "Contact", href: "#contact" },
               ].map((item) => (
-                <li key={item.label}>
+                <li key={item.label} className="w-auto">
                   <a
                     href={item.href}
                     className="group text-base font-medium text-[var(--teks)] transition-colors duration-300"
@@ -99,6 +100,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+
             <p className="text-sm text-[var(--teks-secondary)]">
               &copy; 2025 @SIJA SMKN 1 CIMAHI
             </p>

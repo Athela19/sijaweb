@@ -49,7 +49,7 @@ export default function AboutSection() {
 
   return (
     <section id="product" className="py-24 bg-[var(--background)]">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4 md:px-2">
         {/* Heading */}
         <div className="mb-6">
           <h1 className="text-base md:text-lg font-bold text-gray-600 flex items-center gap-4 text-center md:text-left">
@@ -64,7 +64,7 @@ export default function AboutSection() {
         {/* Cards */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-[430px]"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 min-h-[300px]"
         >
           {currentItems.map((item, index) => (
             <motion.div
@@ -80,10 +80,11 @@ export default function AboutSection() {
                 className="w-full h-40 object-cover rounded-xl mb-4"
               />
               <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-              <p className="text-gray-600 mb-2">{item.desc}</p>
-              {item.maker && (
+                 {item.maker && (
                 <p className="text-sm text-gray-500 italic">Oleh: {item.maker}</p>
               )}
+              <p className="text-gray-600 mb-2">{item.desc}</p>
+           
             </motion.div>
           ))}
         </div>
@@ -97,7 +98,6 @@ export default function AboutSection() {
           >
             <ChevronLeft size={18} />
           </button>
-
 
           <span className="px-4 py-2 rounded bg-blue-600 text-white text-sm font-medium">
             {currentPage}   

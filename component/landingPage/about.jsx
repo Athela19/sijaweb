@@ -37,8 +37,8 @@ const features = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="md:py-42 py-24 bg-[var(--background)]">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section id="about" className="md:py-28 py-24 bg-[var(--background)]">
+      <div className="container mx-auto md:px-16  px-4 max-w-7xl">
         <div className="flex flex-col xl:flex-row items-center gap-12">
           {/* Kiri: Penjelasan */}
           <motion.div
@@ -46,7 +46,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="md:w-5/12 w-full px-4"
+            className="md:w-5/12 w-full"
           >
             <h1 className="md:text-lg text-base font-bold text-gray-600 mb-2 md:mb-0 text-center md:text-left flex items-center gap-4">
               Tentang Kami

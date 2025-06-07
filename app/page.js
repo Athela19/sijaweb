@@ -8,6 +8,7 @@ import AboutPage from "@/component/landingPage/about";
 import StatsPage from "@/component/landingPage/stats";
 import Product from "@/component/landingPage/product";
 import Documentasion from "@/component/landingPage/documentasion";
+import KataKata from "@/component/landingPage/katakata";
  
 export default function Home() {
    const [loading, setLoading] = useState(true);
@@ -29,6 +30,7 @@ export default function Home() {
         <StatsPage />
         <Product />
         <Documentasion />
+        <KataKata />
       </AppShell>
     </>
   );

@@ -4,22 +4,23 @@ const TypingEffect = ({ text, speed = 200 }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
 
-  // Efek untuk kursor berkedip
+  useEffect(() => {
+    // Reset saat text berubah
+    setDisplayedText('');
+  }, [text]);
+
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor(prev => !prev);
-    }, 500); // Kedip setiap 500ms
-
+    }, 500);
     return () => clearInterval(cursorInterval);
   }, []);
 
-  // Efek untuk mengetik
   useEffect(() => {
     if (displayedText.length < text.length) {
       const typingTimeout = setTimeout(() => {
         setDisplayedText(text.substring(0, displayedText.length + 1));
       }, speed);
-
       return () => clearTimeout(typingTimeout);
     }
   }, [displayedText, text, speed]);
@@ -27,9 +28,9 @@ const TypingEffect = ({ text, speed = 200 }) => {
   return (
     <span>
       {displayedText}
-      <span 
-        className={`cursor ${showCursor ? 'opacity-100' : 'opacity-0'}`}
-        style={{ borderRight: '2px solid currentColor' }}
+      <span
+        className={`inline-block ${showCursor ? 'opacity-100' : 'opacity-0'}`}
+        style={{ borderRight: '2px solid currentColor', marginLeft: '2px' }}
       >
         &nbsp;
       </span>

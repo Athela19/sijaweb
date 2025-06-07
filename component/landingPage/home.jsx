@@ -62,8 +62,8 @@ export default function HomePage() {
     }
 
     morphLoop(wave1Ref, wave1Paths, 2);
-    morphLoop(wave2Ref, wave2Paths, 3);
-    morphLoop(wave3Ref, wave3Paths, 1);
+    morphLoop(wave2Ref, wave2Paths, 4);
+    morphLoop(wave3Ref, wave3Paths, 3);
   }, []);
 
   return (
@@ -84,7 +84,7 @@ export default function HomePage() {
       </div>
 
       {/* Konten utama */}
-      <div className="relative min-h-screen z-40 flex flex-col-reverse md:flex-row justify-between items-center px-4 md:px-12 lg:px-28">
+      <div className="relative min-h-screen z-40 flex flex-col-reverse md:flex-row justify-between items-center px-4 md:px-16">
         {/* Kiri */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
@@ -117,14 +117,14 @@ export default function HomePage() {
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="hero-img w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mt-40 md:mb-30 md:mt-0"
+          className="hero-img w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mt-40 md:mb-30 md:mt-0 flex items-center justify-end"
         >
           <Image
             src="/slider-img.png"
             alt=""
-            width={400}
-            height={400}
-            className="animated-updown w-full h-auto"
+            width={300}
+            height={300}
+            className="animated-updown w-100 h-auto "
           />
         </motion.div>
       </div>

@@ -1,0 +1,146 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import TypingEffect from "../sub-component/typing";
+import { User } from "lucide-react";
+
+const kataKataList = [
+  {
+    name: "Antoni Budiman, S.Pd, M.Pd",
+    role: "Kepala Kompetensi Keahlian SIJA",
+    image: "/guru/Anton.jpeg",
+    quote:
+      "Jika Tak Mau Belajar Berarti Pemilik Masa Lalu. Tetapi Jika Mau Belajar Akan Menjadi  Pemilik Masa Depan.",
+  },
+  {
+    name: "Dendi Muhammad Jabar, S.Pd",
+    role: "Kepala Bengkel Keahlian SIJA",
+    image: "/guru/dendi.jpg",
+    quote: "Jangan menunda-nunda. Saat ini adalah waktu terbaik untuk memulai.",
+  },
+  {
+    name: "Diky Ridwan, S.Kom",
+    role: "Guru Keahlian SIJA",
+    image: "/guru/Diki.jpeg",
+    quote:
+      "Belajar, belajar dan terus belajar yang dilandasi karena ALLAH semata, Menjadikan sukses dan berkah dunia akhirat.",
+  },
+  {
+    name: "Maya Yashbir Munfi'ah, S.T",
+    role: "Guru Keahlian SIJA",
+    image: "",
+    quote: "Belum ditambahkan",
+  },
+  {
+    name: "Adi Setiadi, S.T",
+    role: "Guru Keahlian SIJA",
+    image: "/guru/adi.jpg",
+    quote:
+      "belajarlah untuk menghadapi masa depan, sebelum masa depan yang memaksa mu untuk belajar.",
+  },
+  {
+    name: "Aditya Pratama, S.M",
+    role: "Guru Keahlian SIJA",
+    image: "/guru/tyo.jpeg",
+    quote:
+      "Percayalah kepada diri sendiri. Jangan takut gagal, karena setiap kegagalan adalah pelajaran berharga untuk menjadi lebih baik.",
+  },
+  {
+    name: "Yuli Pamungkas, S.P",
+    role: "Guru Keahlian SIJA",
+    image: "/guru/yuli.jpeg",
+    quote: "Kesabaran adalah kunci keberhasilan dalam pemrograman",
+  },
+  {
+    name: "Ujang Yusas",
+    role: "Staf Tata Usaha SIJA",
+    image: "/guru/yusas.jpeg",
+    quote: "Semangat belajar, untuk mencapai cita cita.",
+  },
+];
+
+export default function KataKata() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setActiveIndex((prev) => (prev + 1) % kataKataList.length);
+        setFade(true);
+      }, 500);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="relative flex items-center justify-center bg-[var(--primary)] text-white py-12 sm:py-16 min-h-[400px] overflow-hidden">
+      {/* Background Image */}
+      <img
+        src="/guru/R14.jpg"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
+      />
+
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-md sm:max-w-xl px-4 sm:px-6 text-center">
+        <div
+          className={`transition-opacity duration-500 ease-in-out ${
+            fade ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {kataKataList[activeIndex].image ? (
+            <img
+              src={kataKataList[activeIndex].image}
+              alt={kataKataList[activeIndex].name}
+              width={20}
+              height={20}
+              className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full object-cover mb-4 border-6"
+              style={{ borderColor: "rgba(255, 255, 255, 0.2)" }}
+            />
+          ) : (
+            <div
+              className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full object-cover mb-4 border-6 flex items-center justify-center"
+              style={{ borderColor: "rgba(255, 255, 255, 0.2)" }}
+            >
+              <User className="w-12 h-12" />
+            </div>
+          )}
+
+          <h3 className="text-lg sm:text-xl font-bold">
+            <TypingEffect text={kataKataList[activeIndex].name} speed={120} />
+          </h3>
+
+          <h4 className="text-xs sm:text-sm text-gray-300">
+            {kataKataList[activeIndex].role}
+          </h4>
+
+          <p className="italic text-lg sm:text-lg text-gray-100 mt-4 min-h-[80px] flex items-center justify-center text-center">
+            “{kataKataList[activeIndex].quote}”
+          </p>
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="flex justify-center gap-2 mt-6">
+          {kataKataList.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => {
+                setFade(false);
+                setTimeout(() => {
+                  setActiveIndex(idx);
+                  setFade(true);
+                }, 300);
+              }}
+              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-colors duration-300 ${
+                idx === activeIndex ? "bg-white" : "bg-gray-500 hover:bg-white"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
