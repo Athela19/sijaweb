@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import TypingEffect from "../sub-component/typing";
 import { User } from "lucide-react";
+import { motion } from "framer-motion";
 
 const kataKataList = [
   {
@@ -76,7 +77,13 @@ export default function KataKata() {
   }, []);
 
   return (
-    <section className="relative flex items-center justify-center bg-[var(--primary)] text-white py-12 sm:py-16 min-h-[400px] overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="relative flex items-center justify-center bg-[var(--primary)] text-white py-12 sm:py-16 min-h-[400px] overflow-hidden"
+    >
       {/* Background Image */}
       <img
         src="/guru/R14.jpg"
@@ -141,6 +148,6 @@ export default function KataKata() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

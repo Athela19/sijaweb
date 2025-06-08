@@ -51,7 +51,12 @@ export default function AboutSection() {
     <section id="product" className="py-24 bg-[var(--background)]">
       <div className="max-w-6xl mx-auto px-4 md:px-2">
         {/* Heading */}
-        <div className="mb-6">
+        <motion.div
+         initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="mb-6">
           <h1 className="text-base md:text-lg font-bold text-gray-600 flex items-center gap-4 text-center md:text-left">
             Produk
             <span className="w-24 border-b-2 border-[var(--secondary)]" />
@@ -59,7 +64,7 @@ export default function AboutSection() {
           <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary)] mt-2 text-left">
             Bukan Sekadar Inovasi
           </h2>
-        </div>
+        </motion.div>
 
         {/* Cards */}
         <div

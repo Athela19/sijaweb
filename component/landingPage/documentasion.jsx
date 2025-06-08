@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"; // pastikan import useEffect juga
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import { motion } from "framer-motion";
 
 // untuk gambar masukin rasion 16:9 jangan yang lain biar rapi
 const dokumentasi = [
@@ -58,7 +59,13 @@ export default function Documentasion() {
 
   return (
     <section id="docs" className="py-24 bg-gray-50 px-6 md:px-16">
-      <div className="mb-6">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="mb-6"
+      >
         <h1 className="text-base md:text-lg font-bold text-gray-600 flex items-center gap-4 text-center md:text-left">
           Dokumentasi
           <span className="w-24 border-b-2 border-[var(--secondary)]" />
@@ -66,8 +73,14 @@ export default function Documentasion() {
         <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary)] mt-2 text-left">
           Jelajahi Dokumentasi
         </h2>
-      </div>
-      <div className="mx-auto md:px-4 relative max-w-7xl">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="mx-auto md:px-4 relative max-w-7xl"
+      >
         <div
           className="relative rounded-3xl overflow-hidden grid grid-cols-4 md:grid-cols-6 grid-rows-2 md:gap-3 gap-1 bg-[var(--background)]"
           style={{ maxHeight: "80vh" }}
@@ -163,8 +176,7 @@ export default function Documentasion() {
             </div>
           </div>
         </div>
-      </div>
-
+      </motion.div>
       {/* Mobile Pagination */}
       <div className="block md:hidden mt-6 flex justify-center gap-2">
         {dokumentasi.map((_, index) => (
