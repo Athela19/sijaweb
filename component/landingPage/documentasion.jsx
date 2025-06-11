@@ -3,34 +3,8 @@
 import { useState, useEffect } from "react"; // pastikan import useEffect juga
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import dokumentasi from "@/public/konten/dokumentasi";
 
-// untuk gambar masukin rasion 16:9 jangan yang lain biar rapi
-const dokumentasi = [
-  {
-    img: [
-      "/dokumentasi/1.jpg",
-      "/dokumentasi/2.jpg",
-      "/dokumentasi/3.jpg",
-      "/dokumentasi/4.jpg",
-      "/dokumentasi/5.jpg",
-      "/dokumentasi/6.jpg",
-    ],
-    title: "Angkatan @49",
-    delay: 3,
-  },
-  {
-    img: [
-      "/dokumentasi/6.jpg",
-      "/dokumentasi/5.jpg",
-      "/dokumentasi/4.jpg",
-      "/dokumentasi/3.jpg",
-      "/dokumentasi/2.jpg",
-      "/dokumentasi/1.jpg",
-    ],
-    title: "Angkatan @50",
-    delay: 3,
-  },
-];
 
 export default function Documentasion() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,7 +32,7 @@ export default function Documentasion() {
   };
 
   return (
-    <section id="docs" className="py-24 bg-gray-50 px-6 md:px-16">
+    <section id="docs" className="py-24 bg-[var(--background)] px-6 md:px-16">
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}

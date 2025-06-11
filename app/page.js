@@ -10,6 +10,7 @@ import Product from "@/component/landingPage/product";
 import Documentasion from "@/component/landingPage/documentasion";
 import KataKata from "@/component/landingPage/katakata";
 import StructurePage from "@/component/landingPage/structure";
+import Contact from "@/component/landingPage/kontak";
  
 export default function Home() {
    const [loading, setLoading] = useState(true);
@@ -33,6 +34,7 @@ export default function Home() {
         <Documentasion />
         <KataKata />
         <StructurePage />
+        <Contact /> 
       </AppShell>
     </>
   );
