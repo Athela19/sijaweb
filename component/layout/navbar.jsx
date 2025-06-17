@@ -42,6 +42,7 @@ export default function Navbar() {
     { label: "Dokumentasi", href: "#docs" },
     { label: "Struktur", href: "#structure" },
     { label: "Kontak", href: "#contact" },
+    { label: "LMS", href: "/LMS" },
   ];
 
   return (
